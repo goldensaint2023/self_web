@@ -1,0 +1,717 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "TWK Lausanne", "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 第二段代码 */
+h1 {
+    color: #fff;
+    font-size: 7rem;
+    font-weight: 400;
+    letter-spacing: -0.2rem;
+    line-height: 1;
+}
+
+a,
+p {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    user-select: none;
+}
+
+nav {
+    /* 第一段代码 */
+    position: fixed;
+    width: 100vw;
+    padding: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo a {
+    padding-top: 500px;
+    font-weight: 600;
+    color: #fdfbfb;
+    font-size: medium;
+}
+
+.menu-toggle {
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+/* 第一段代码 */
+.menu-toggle p {
+    position: absolute;
+    transform-origin: top left;
+    will-change: transform, opacity;
+}
+
+
+/*.menu-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100svh;
+    background-color: #0f0f0f;
+    z-index: 1;
+}
+
+
+.menu-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: left bottom;
+    will-change: transform, opacity;
+}
+*/
+
+/* 在styles.css中找到.menu-overlay的样式，修改clip-path初始值 */
+.menu-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100svh;
+    background-color: #0f0f0f;
+    z-index: 1;
+    /* 修改初始裁剪路径，让菜单可以被动画显示 */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+/* full-size background used for the hover preview (under menu content) */
+
+.menu-overlay .menu-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* full-size images appended inside .menu-bg */
+.menu-overlay .menu-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+
+/* frosted glass layer: sits above the changing bg images, below the menu text */
+.menu-overlay .menu-frost {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(18, 18, 18, 0.38);
+    -webkit-backdrop-filter: blur(1px) saturate(1.4);
+    backdrop-filter: blur(1px) saturate(1.4);
+}
+
+/* fallback for browsers without backdrop-filter support: darker tint keeps text readable */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .menu-overlay .menu-frost {
+        background: rgba(15, 15, 15, 0.78);
+    }
+}
+
+/* ensure menu-content sits above the background */
+.menu-overlay .menu-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* 同时检查.menu-content的初始样式 */
+.menu-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: left bottom;
+    will-change: transform, opacity;
+    /* 移除可能冲突的初始变换 */
+    transform: none;
+    opacity: 1;
+}
+
+
+/* 第四段代码 */
+.menu-items,
+.menu-footer {
+    width: 100%;
+    padding: 2.5em;
+    display: flex;
+    gap: 2.5em;
+}
+
+.col-lg {
+    flex: 3;
+}
+
+.col-sm {
+    flex: 2;
+}
+
+
+
+
+.menu-items .col-lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-preview-img {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+/* 第三段代码 */
+.menu-preview-img img {
+    position: absolute;
+    will-change: transform, opacity;
+}
+
+.menu-items .col-sm {
+    padding: 2.5em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.menu-links,
+.menu-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/* 第二段代码 */
+.link,
+.social {
+    padding-bottom: 6px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.link a,
+.social a {
+    display: inline-block;
+    will-change: transform;
+    transition: color 0.5s;
+}
+
+.link a {
+    font-size: 3.5rem;
+    letter-spacing: -0.02rem;
+}
+
+.social a {
+    color: #8f8f8f;
+}
+
+.social a:hover {
+    color: #fff;
+}
+
+.menu-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.menu-footer .col-sm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link a::after,
+.social a::after,
+.menu-footer a::after {
+    position: absolute;
+    content: "";
+    top: 102.5%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+/* 第一段代码 */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transform-origin: right top;
+}
+
+/* 第二段代码 */
+.link a:hover::after,
+.social a:hover::after,
+.menu-footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 第三段代码 */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    padding: 2.5em;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+/* 第四段代码 */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    z-index: -1;
+}
+
+.hero h1 {
+    width: 80%;
+
+}
+
+.menu-toggle p#menu-close {
+    opacity: 0;
+    transform: translateX(-5px) translateY(10px) rotate(5deg);
+}
+
+.link a,
+.social a {
+    transform: translateY(120%);
+    opacity: 0.25;
+}
+
+.menu-content {
+    /*transform: translateX(-100px) translateY(-100px) scale(1.5) rotate(-15deg);*/
+    opacity: 0.25;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+.menu-overlay {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+@media (max-width: 900px) {
+    .hero h1 {
+        width: 100%;
+        font-size: 4rem;
+        letter-spacing: 0;
+    }
+
+    .menu-items .col-lg {
+        display: none;
+    }
+
+    .link a::after,
+    .social a::after,
+    .menu-footer a::after {
+        display: none;
+    }
+}
+
+/* ============ content pages (self-introduce / project / honor) ============ */
+
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    background-color: #0f0f0f;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    visibility: hidden;
+    pointer-events: none;
+    will-change: clip-path;
+}
+
+.page-overlay.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.page-overlay .page-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.page-overlay .page-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform, opacity;
+}
+
+/* frosted glass layer over the page background, same treatment as the menu */
+.page-overlay .page-frost {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(12, 12, 12, 0.52);
+    -webkit-backdrop-filter: blur(2px) saturate(1.2);
+    backdrop-filter: blur(2px) saturate(1.2);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .page-overlay .page-frost {
+        background: rgba(15, 15, 15, 0.82);
+    }
+}
+
+.page-overlay .page-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+/* revealed by GSAP when a page opens */
+.page-header > * {
+    opacity: 0;
+}
+
+.page-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #b5b5b5;
+}
+
+.page-back {
+    cursor: pointer;
+}
+
+.page-back::after {
+    position: absolute;
+    content: "";
+    top: 102.5%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.page-back:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* panels */
+.page-panel {
+    position: absolute;
+    inset: 0;
+    display: none;
+    overflow-y: auto;
+    padding: 6.5em 2.5em 4em;
+}
+
+.page-panel.active {
+    display: block;
+}
+
+.panel-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.panel-intro {
+    margin-bottom: 2.5em;
+}
+
+.panel-intro h2 {
+    color: #fff;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.panel-intro h2 span {
+    color: #8f8f8f;
+}
+
+.panel-intro h2 .gpa-num {
+    color: #fff;
+}
+
+.panel-intro h2 em {
+    font-style: normal;
+    color: #8f8f8f;
+    font-size: 0.45em;
+}
+
+.panel-sub {
+    margin-top: 0.8em;
+    color: #9a9a9a;
+}
+
+/* glass cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1.75em;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+.glass-card h3 {
+    color: #e8e8e8;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.1em;
+}
+
+.card-list {
+    list-style: none;
+}
+
+.card-list li {
+    position: relative;
+    padding-left: 1.1em;
+    margin-bottom: 0.6em;
+    color: #d6d6d6;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.card-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #8f8f8f;
+}
+
+.card-text {
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.card-line {
+    color: #d6d6d6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-main {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 0.5em;
+}
+
+.card-list + .card-text {
+    margin-top: 0.6em;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ddd;
+    margin-bottom: 1em;
+}
+
+.card-tech {
+    margin: 1em 0;
+    color: #b7b7b7;
+    font-size: 0.85rem;
+}
+
+.about-grid,
+.proj-grid,
+.honor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+}
+
+.card-wide {
+    grid-column: 1 / -1;
+}
+
+.proj-card h3 {
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4em;
+}
+
+.proj-card .card-tag {
+    margin-top: 0.4em;
+}
+
+/* honor */
+.score-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+}
+
+.chip {
+    padding: 0.5em 0.95em;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ddd;
+    font-size: 0.85rem;
+}
+
+.chip b {
+    color: #fff;
+    font-weight: 600;
+    margin-left: 0.35em;
+}
+
+.award-list {
+    list-style: none;
+}
+
+.award-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2em;
+    padding: 0.85em 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d6d6d6;
+    font-weight: 300;
+}
+
+.award-list li:last-child {
+    border-bottom: none;
+}
+
+.award-date {
+    color: #9a9a9a;
+    font-size: 0.85rem;
+    min-width: 4.5em;
+}
+
+/* content blocks fade in via GSAP */
+.page-panel .reveal {
+    opacity: 0;
+}
+
+/* toast */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 3em;
+    transform: translateX(-50%);
+    padding: 0.7em 1.5em;
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 10;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* responsive for content pages */
+@media (max-width: 900px) {
+    .page-header {
+        padding: 1.5em;
+    }
+
+    .page-panel {
+        padding: 5.5em 1.5em 3em;
+    }
+
+    .about-grid,
+    .proj-grid,
+    .honor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-intro h2 {
+        font-size: 2.4rem;
+    }
+
+    .award-list li {
+        flex-direction: column;
+        gap: 0.3em;
+    }
+}

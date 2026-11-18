@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SELF-WEBSITE</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">Hawke Huang</a>
+
+        </div>
+        <div class="menu-toggle">
+            <p id="menu-open">Menu</p>
+            <p id="menu-close">Close</p>
+        </div>
+    </nav>
+    <div class="menu-overlay">
+        <!-- background container for large image previews (JS will append images here) -->
+        <div class="menu-bg" aria-hidden="true"></div>
+        <!-- frosted glass layer: keeps text readable no matter which image is behind -->
+        <div class="menu-frost" aria-hidden="true"></div>
+        <div class="menu-content">
+            <div class="menu-items">
+                <div class="col-lg">
+                    <div class="menu-preview-img"><img src="img2/cost.jpg"></div>
+                </div>
+                <div class="col-sm">
+                    <div class="menu-links">
+                        <div class="link">
+                            <a href="#" data-page="self-introduce" data-img="img2/person.jpg">self-introduce</a>
+                        </div>
+                        <div class="link">
+                            <a href="#" data-page="project" data-img="img2/god.jpg">project</a>
+                        </div>
+                        <div class="link">
+                            <a href="#" data-page="honor" data-img="img2/ship.jpg">honor</a>
+                        </div>
+                        <div class="link">
+                            <a href="#" data-img="img2/star.jpg">waiting</a>
+                        </div>
+                    </div>
+                    <div class="menu-socials">
+                        <div class="social"><a href="#">Behance</a></div>
+                        <div class="social"><a href="#">Dribbble</a></div>
+                        <div class="social"><a href="#">LinkedIn</a></div>
+                        <div class="social"><a href="#">Instagram</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-footer">
+                <div class="col-lg">
+                    <a href="#">Origin </a>
+                    <a href="#">Join Signal</a>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+        </div>
+    </div>
+    <!-- content page overlay: opens when a menu link is clicked -->
+    <div class="page-overlay" aria-hidden="true">
+        <div class="page-bg" aria-hidden="true"></div>
+        <div class="page-frost" aria-hidden="true"></div>
+        <div class="page-content">
+            <header class="page-header">
+                <a href="#" class="page-back">Back</a>
+                <p class="page-title">self-introduce</p>
+            </header>
+
+            <!-- self-introduce -->
+            <section class="page-panel" data-page="self-introduce">
+                <div class="panel-inner">
+                    <div class="panel-intro reveal">
+                        <h2>黄皓 <span>Hawke Huang</span></h2>
+                        <p class="panel-sub">22岁 · 意向方向：视觉算法 / Agent 开发 / 模型训练部署</p>
+                    </div>
+                    <div class="about-grid">
+                        <div class="glass-card reveal">
+                            <h3>EDUCATION</h3>
+                            <p class="card-main">西华大学 · 智能科学与技术</p>
+                            <p class="card-line">计算机与软件工程学院（2023 - 2027）</p>
+                            <p class="card-line">GPA 3.45 / 4.00 · 专业前 17%</p>
+                        </div>
+                        <div class="glass-card reveal">
+                            <h3>SKILLS</h3>
+                            <ul class="card-list">
+                                <li>Python / C/C++ / Java，了解 HTML / CSS / JavaScript</li>
+                                <li>PyTorch · OpenCV · LangChain · FastAPI · SimpleITK</li>
+                                <li>Claude Code、Codex 等 AI 编程工具，Conda、Git</li>
+                                <li>英语 CET-4，可阅读英文技术文档</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card reveal">
+                            <h3>CONTACT</h3>
+                            <ul class="card-list">
+                                <li>电话 15228254141</li>
+                                <li>邮箱 2338966551@qq.com</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card reveal">
+                            <h3>EXPERIENCE</h3>
+                            <ul class="card-list">
+                                <li>华为 ICT 人才实训中心 — 计算机网络</li>
+                                <li>成都国信安 — 人工智能</li>
+                                <li>西华大学小型课题组；数学建模、智能车、数学竞赛、全英赛等比赛</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card card-wide reveal">
+                            <h3>POSITION &amp; ABOUT</h3>
+                            <ul class="card-list">
+                                <li>职务：国防特请中队护旗手 · 学习委员</li>
+                            </ul>
+                            <p class="card-text">具备良好的沟通表达与团队协作能力，擅长需求沟通，可快速理解业务场景；熟悉 RAG 技术，能够基于业务需求搭建垂直领域知识库。拥有目标检测、医学影像分割、AI 智能体、半自动标注工具等多个项目实战经验，可利用 AI 编程工具辅助开发、调试代码，具备较强自学能力与工程落地意识，对待任务严谨负责。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- project -->
+            <section class="page-panel" data-page="project">
+                <div class="panel-inner">
+                    <div class="panel-intro reveal">
+                        <h2>PROJECTS</h2>
+                        <p class="panel-sub">AI 智能体 / 目标检测 / 医学影像分割 / 自动标注</p>
+                    </div>
+                    <div class="proj-grid">
+                        <article class="glass-card proj-card reveal">
+                            <h3>ChatAgentBI</h3>
+                            <p class="card-tag">Agent 开发</p>
+                            <p class="card-text">基于 LangChain 的 AI 智能体框架。针对传统大模型无法联动外部业务、无法自主执行闭环任务的痛点，整合数据库查询、邮件推送等业务工具，实现 AI 自主思考、调用工具、完成业务闭环的智能交互能力。</p>
+                            <p class="card-tech">Python · LangChain · FastAPI · Pydantic · MySQL · python-dotenv</p>
+                            <ul class="card-list">
+                                <li>主导三层解耦架构搭建（模型层 / 数据模型层 / 工具层），大模型线程安全单例封装，双重检查锁优化模型加载</li>
+                                <li>封装 DeepSeek 大模型调用接口，兼容通用 OpenAI 格式；自定义系统提示词、工具注册规则</li>
+                                <li>独立开发 MySQL 查询、SMTP 邮件发送工具，Pydantic 结构化定义入参出参</li>
+                                <li>FastAPI 搭建轻量 Web 服务；.env 统一管理密钥、数据库、模型等敏感配置</li>
+                                <li>标准化功能扩展范式，新增业务工具无需改动核心框架代码</li>
+                            </ul>
+                        </article>
+                        <article class="glass-card proj-card reveal">
+                            <h3>YOLOv5 课堂行为检测</h3>
+                            <p class="card-tag">检测任务</p>
+                            <p class="card-text">针对学生日常课堂影像数据集，实现举手、思考、睡觉、写字等 6 类行为分类，快速反映学生课堂上课质量。</p>
+                            <p class="card-tech">Python · PyTorch · OpenCV · NumPy · ONNX · TensorFlow</p>
+                            <ul class="card-list">
+                                <li>完成 400+ 图片标注；基于开源 YOLOv5 模型与 yolov5s.pt 预训练模型开发</li>
+                                <li>TensorFlow + ONNX 以 int8 量化实现模型轻量化，部署到 OpenArt</li>
+                                <li>与 6 名同学合作完成，负责算法开发与实验验证，通过结题答辩</li>
+                            </ul>
+                        </article>
+                        <article class="glass-card proj-card reveal">
+                            <h3>肺部 CT 结节检测系统</h3>
+                            <p class="card-tag">分割任务</p>
+                            <p class="card-text">面向医学 CT 影像的端到端肺结节检测与分割原型系统，自动识别疑似结节，输出位置、尺寸、置信度，配套可视化界面辅助影像筛查研究。</p>
+                            <p class="card-tech">Python · PyTorch · SimpleITK · Pydicom · OpenCV · Streamlit</p>
+                            <ul class="card-list">
+                                <li>DICOM/NIfTI 加载，HU 窗宽窗位调整、CLAHE 增强、去噪归一化；LUNA16 标注解析生成分割掩码</li>
+                                <li>实现 2D U-Net、U-Net++、Attention U-Net；DiceLoss+BCE 联合损失，早停 + TensorBoard + 混合精度训练</li>
+                                <li>NMS + 解剖学规则 + 血管抑制三级过滤降低假阳性；Dice、IoU、Hausdorff 距离评估</li>
+                                <li>Tkinter 与 Streamlit 双界面，批量推理，自动生成 PDF/Excel 检测汇总报告</li>
+                            </ul>
+                        </article>
+                        <article class="glass-card proj-card reveal">
+                            <h3>AutoLabel</h3>
+                            <p class="card-tag">自动标注</p>
+                            <p class="card-text">基于主动学习与伪标签的迭代自动标注工具，面向目标检测 / 实例分割，利用小规模标注数据训练种子模型，结合伪标签 + 置信度分桶主动学习策略，大幅减少人工标注工作量。</p>
+                            <p class="card-tech">Python · Ultralytics (YOLOv8) · OpenCV · NumPy</p>
+                            <ul class="card-list">
+                                <li>置信度分桶采样策略，优先筛选中等置信度高价值样本人工修正，显著降低标注成本</li>
+                                <li>种子模型训练、批量伪标签生成、不确定性样本筛选；YOLO / COCO 标签格式互转</li>
+                                <li>一键式迭代训练流水线，bat 脚本 + Python API 两套调用方式，开箱即用</li>
+                                <li>setup.py 可编辑安装，可发布 PyPI；配套文档、示例代码与单元测试</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- honor -->
+            <section class="page-panel" data-page="honor">
+                <div class="panel-inner">
+                    <div class="panel-intro reveal">
+                        <h2>GPA <span class="gpa-num">3.45</span><em>/ 4.00</em></h2>
+                        <p class="panel-sub">专业前 17%</p>
+                    </div>
+                    <div class="honor-grid">
+                        <div class="glass-card reveal">
+                            <h3>COURSE HIGHLIGHTS</h3>
+                            <div class="score-chips">
+                                <span class="chip">高等数学A(1)<b>92</b></span>
+                                <span class="chip">高等数学A(2)<b>90</b></span>
+                                <span class="chip">计算机网络<b>94</b></span>
+                                <span class="chip">数据结构<b>82</b></span>
+                                <span class="chip">操作系统<b>80</b></span>
+                                <span class="chip">自然语言处理<b>87</b></span>
+                                <span class="chip">机器学习<b>81</b></span>
+                                <span class="chip">软件工程<b>81</b></span>
+                                <span class="chip">计算机视觉<b>70</b></span>
+                            </div>
+                        </div>
+                        <div class="glass-card reveal">
+                            <h3>AWARDS</h3>
+                            <ul class="award-list">
+                                <li><span class="award-date">2026.11</span>院级三好学生 — 西华大学</li>
+                                <li><span class="award-date">2025.09</span>数学建模三等奖</li>
+                                <li><span class="award-date">2025.04</span>数据结构与程序设计优秀奖 — 西华大学</li>
+                                <li><span class="award-date">2024.11</span>院级三好学生 — 西华大学</li>
+                                <li><span class="award-date">2024.05</span>创想杯创意组优秀奖 — 西华大学</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="toast" id="toast">coming soon</div>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-img"> <img src="img2/orange.jpg" alt=""></div>
+            <h1> Live with dignity and die with grace</h1>
+        </section>
+    </div>
+    <!-- Load GSAP as a global script first to avoid module/CORS issues when opening files locally -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script defer src="java/script.js"></script>
+</body>
+
+</html>
